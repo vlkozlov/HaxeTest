@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+    <meta title="HaxeTest" package="com.sample.haxetest" version="1.0.0" company="Company Name"/>
+
+    <app main="Main" path="Export" file="HaxeTest"/>
+
+    <source path="Source"/>
+
+    <haxelib name="openfl"/>
+
+    <library path="Assets/TestPreload/Test.swf" id="testPreload" preload="true" />
+
+    <assets path="Assets/TestRuntime" rename="testRuntime" embed="false"/>
+
+</project>
