@@ -15,7 +15,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Haxe 3.4.7" jdkType="Haxe toolkit" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library name="haxelib|openfl:any">
         <CLASSES>
           <root url="file://D:/Tools/Haxe/haxe/lib/openfl/8,8,0/src" />
@@ -26,5 +26,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="8,8,0" level="project" />
   </component>
 </module>

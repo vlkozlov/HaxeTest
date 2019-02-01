@@ -1,33 +1,33 @@
 package ;
 
+import openfl.display.FPS;
 import openfl.utils.Assets;
-import openfl.utils.AssetLibrary;
 import openfl.display.Sprite;
 
 class Main extends Sprite {
+    private static inline var Y_OFFSET: Int = 100;
+
     public function new() {
         super();
 
-        // Example 1. Preloading library works correctly
-        var mcPreload = Assets.getMovieClip ("testPreload:test1");
-        mcPreload.x = 100;
-        mcPreload.y = 100;
-        addChild(mcPreload);
+        stage.frameRate = 30;
 
-        // Example 2. Runtime loading causes an error
-        var future = AssetLibrary.loadFromFile ("testRuntime/Test.bundle");
-        future.onComplete (library_onComplete);
-        future.onError (library_onError);
-    }
+        var fps: FPS = new FPS();
+        fps.x = 10;
+        fps.y = 10;
+        addChild(fps);
 
-    private function library_onComplete (library:AssetLibrary):Void {
-        var mcRuntime = library.getMovieClip ("test1");
-        mcRuntime.x = 200;
-        mcRuntime.y = 200;
-        addChild (mcRuntime);
-    }
+        var x = 10;
+        var y = 5;
 
-    private function library_onError (err:Dynamic):Void {
-        trace("Error " + err);
+        for(i in 0...x) {
+            for(j in 0...y) {
+                var mcPreload = Assets.getMovieClip ("test:test2");
+                mcPreload.x = 100 * i;
+                mcPreload.y = Y_OFFSET + 100 * j;
+                mcPreload.play();
+                addChild(mcPreload);
+            }
+        }
     }
 }
